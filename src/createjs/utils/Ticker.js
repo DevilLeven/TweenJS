@@ -316,6 +316,12 @@ this.createjs = this.createjs||{};
 		if (!Ticker._inited) { return; }
 		Ticker._setupTick();
 	};
+
+	/**
+	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
+	 * @method setInterval
+	 * @deprecated
+	 */
 	// Ticker.setInterval is @deprecated. Remove for 1.1+
 	Ticker.setInterval = createjs.deprecate(Ticker._setInterval, "Ticker.setInterval");
 
@@ -329,6 +335,12 @@ this.createjs = this.createjs||{};
 	Ticker._getInterval = function() {
 		return Ticker._interval;
 	};
+
+	/**
+	 * Use the {{#crossLink "Ticker/interval:property"}}{{/crossLink}} property instead.
+	 * @method getInterval
+	 * @deprecated
+	 */
 	// Ticker.getInterval is @deprecated. Remove for 1.1+
 	Ticker.getInterval = createjs.deprecate(Ticker._getInterval, "Ticker.getInterval");
 
@@ -342,6 +354,12 @@ this.createjs = this.createjs||{};
 	Ticker._setFPS = function(value) {
 		Ticker._setInterval(1000/value);
 	};
+
+	/**
+	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
+	 * @method setFPS
+	 * @deprecated
+	 */
 	// Ticker.setFPS is @deprecated. Remove for 1.1+
 	Ticker.setFPS = createjs.deprecate(Ticker._setFPS, "Ticker.setFPS");
 
@@ -355,6 +373,12 @@ this.createjs = this.createjs||{};
 	Ticker._getFPS = function() {
 		return 1000/Ticker._interval;
 	};
+
+	/**
+	 * Use the {{#crossLink "Ticker/framerate:property"}}{{/crossLink}} property instead.
+	 * @method getFPS
+	 * @deprecated
+	 */
 	// Ticker.getFPS is @deprecated. Remove for 1.1+
 	Ticker.getFPS = createjs.deprecate(Ticker._getFPS, "Ticker.getFPS");
 
@@ -482,7 +506,7 @@ this.createjs = this.createjs||{};
 	 * @method getEventTime
 	 * @static
 	 * @param runTime {Boolean} [runTime=false] If true, the runTime property will be returned instead of time.
-	 * @returns {number} The time or runTime property from the most recent tick event or -1.
+	 * @return {number} The time or runTime property from the most recent tick event or -1.
 	 */
 	Ticker.getEventTime = function(runTime) {
 		return Ticker._startTime ? (Ticker._lastTime || Ticker._startTime) - (runTime ? Ticker._pausedTime : 0) : -1;
